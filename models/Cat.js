@@ -13,6 +13,21 @@ const catSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    age: {
+        type: Number
+    },
+    gender: {
+        type: String,
+        enum: ['Male', 'Female', 'Unknown'],
+        default: 'Unknown'
+    },
+    color: {
+        type: String
+    },
+    isAdopted: {
+        type: Boolean,
+        default: false
+    },
     image: {
         type: String
     }

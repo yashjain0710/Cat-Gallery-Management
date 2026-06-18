@@ -72,7 +72,7 @@ exports.login = async (req, res) => {
             {
                 id: user._id
             },
-            "mykeypswrd",
+            process.env.JWT_SECRET,
             {
                 expiresIn: "7d"
             }

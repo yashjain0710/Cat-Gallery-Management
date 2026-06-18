@@ -6,6 +6,10 @@ exports.addCat = async (req, res) => {
             name: req.body.name,
             breed: req.body.breed,
             description: req.body.description,
+            age: req.body.age,
+            gender: req.body.gender,
+            color: req.body.color,
+            isAdopted: req.body.isAdopted,
             image: req.file ? req.file.path : undefined
         });
 

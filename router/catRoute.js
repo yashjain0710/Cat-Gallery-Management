@@ -23,10 +23,12 @@ const upload = multer({
     storage
 });
 
-router.post("/add/cat", upload.single("image"), addCat);
+const passport = require("passport");
+
+router.post("/add/cat", passport.authenticate("jwt", { session: false }), upload.single("image"), addCat);
 router.get("/get/cats", getAllCats);
 router.get("/get/cat/:id", getCatById);
-router.put("/update/cat/:id", upload.single("image"), updateCat);
-router.delete("/del/cat/:id", deleteCat);
+router.put("/update/cat/:id", passport.authenticate("jwt", { session: false }), upload.single("image"), updateCat);
+router.delete("/del/cat/:id", passport.authenticate("jwt", { session: false }), deleteCat);
 
 module.exports = router;
