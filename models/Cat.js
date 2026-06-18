@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 
-const footballerSchema = new mongoose.Schema({
+const catSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    club: {
+    breed: {
         type: String,
         required: true
     },
-    position: {
+    description: {
         type: String,
         required: true
     },
@@ -20,4 +20,4 @@ const footballerSchema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model("Footballer", footballerSchema);
+module.exports = mongoose.model("Cat", catSchema);

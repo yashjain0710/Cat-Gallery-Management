@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const connectdb = require("./config/db");
-const footballerRoute = require("./router/footballerRoute");
+const catRoute = require("./router/catRoute");
 const authRoute = require("./router/authRouter");
 
 // Middleware
@@ -11,7 +11,7 @@ app.use(express.json());
 connectdb();
 
 // Routes
-app.use("/api/v1", footballerRoute);
+app.use("/api/v1", catRoute);
 app.use("/auth", authRoute);
 
 app.get("/", (req, res) => {
